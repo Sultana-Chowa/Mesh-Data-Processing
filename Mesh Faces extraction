@@ -1,0 +1,16 @@
+import pandas as pd
+
+with open('/content/Ben_pc12_20.ply', 'rb') as f:
+    plydata = plyfile.PlyData.read(f)
+
+vertices = plydata['vertex']
+faces = plydata['face']
+
+# Create the dataframe
+nodes = pd.DataFrame({
+    'Node ID': range(len(vertices)),
+    'X': vertices['x'],
+    'Y': vertices['y'],
+    'Z': vertices['z']
+})
+nodes
