@@ -1,0 +1,6 @@
+!pip install trimesh
+import trimesh
+import numpy as np
+mesh = trimesh.load('/content/drive/MyDrive/Research HIRL/Breast Ultrasound/Datasets/Mesh Data US/Mesh/Malignant/Mal_pc5_33.ply')
+mesh.visual.vertex_colors = np.array([[255, 0, 0, 255]])
+mesh.show()
